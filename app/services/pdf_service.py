@@ -12,7 +12,7 @@ async def extract_text_from_pdf(file: UploadFile) -> str:
     Receives an uploaded PDF file, saves it temporarily (byte form),
     loads it with PyPDFLoader, and returns the text.
     """
-    logger.info(f"Starting PDF extraction for file: {file.filename}")
+    logger.info(f"Starting text extraction for file: {file.filename}")
     # PyPDFLoader needs a path to a file on disk in order to parse the text, 
     # so we save the file temporarily.
     with tempfile.NamedTemporaryFile(delete=False, suffix='.pdf') as tmp:

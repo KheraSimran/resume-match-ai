@@ -1,4 +1,5 @@
 from pydantic_settings import BaseSettings
+from pydantic import ConfigDict
 
 class Settings(BaseSettings):
     openai_api_key: str
@@ -13,7 +14,6 @@ class Settings(BaseSettings):
     langsmith_project: str = 'resume-match-ai-tracing'
     langsmith_api_key: str = ''
 
-    class Config:
-        env_file = '.env'
+    model_config = ConfigDict(env_file=".env")
 
 settings = Settings()
