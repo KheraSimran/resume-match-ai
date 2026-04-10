@@ -72,7 +72,7 @@ def resume_jd_match(resume_chunks: list, job_description: str, collection_name: 
 
     try:
         response = analysis_chain.invoke(job_description)
-        logger.info('Successfully matched resume to description. AI output: ', response)
+        logger.info(f'Successfully matched resume to description. AI output: {response}')
         return response
     except Exception as e:
-        logger.error('Error invoking analysis chain', e)
+        logger.error(f'Error invoking analysis chain: {e}')
